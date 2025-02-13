@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DotNetZone - Strona do nauki C#</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>DotNetZone</h1>
+        </div>
+        <div class="nowbar">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#fundamentals">Podstawy</a></li>
+                <li><a href="#examples">Przykłady</a></li>
+                <li><a href="https://c-sharp.ue.katowice.pl/ksiazka/c_sharp_wer2_0.pdf">Zasoby</a></li>
+                <li><a href="#zaaw">Zaawansowany C#</a></li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Witaj w kursie C#!</h2>
+            <p>Od podstaw do zaawansowanych technik. Rozpocznij swoją przygodę z programowaniem w C#.</p>
+            <a href="#fundamentals" class="cta">Zaczynamy!</a>
+            <a href="https://learn.microsoft.com/pl-pl/dotnet/csharp/language-reference/" class="cta">Dokumentacja C#</a>
+            <a href="https://visualstudio.microsoft.com/pl/" class="cta">Pobierz Visual Studio</a>
+            <a href="https://dotnet.microsoft.com/en-us/download" class="cta">Pobierz .Net</a>
+            
+        </section>
+
+        <section class="fundamentals" id="fundamentals">
+            <h2>Podstawy C#</h2>
+            <div class="content">
+                <h3>Zmienne i Typy Danych</h3>
+                <pre><code>
+int liczba = 10;
+string tekst = "Witaj, C#!";
+bool prawda = true;
+                </code></pre>
+            </div>
+            <div class="content">
+                <h3>Instrukcje warunkowe</h3>
+                <pre><code>
+if (liczba > 5)
+{
+    Console.WriteLine("Liczba jest większa niż 5");
+}
+                </code></pre>
+            </div>
+        </section>
+
+        <div class="content">
+            <h3>Wczytywanie danych od użytkownika</h3>
+            <pre><code>
+Console.WriteLine("Podaj swoje imię:");
+string imie = Console.ReadLine(); // Wczytuje tekst od użytkownika
+Console.WriteLine("Witaj, " + imie + "!");
+            </code></pre>
+        </div>
+
+        <div class="content">
+            <h3>Petle</h3>
+            <pre><code>
+for (int i = 1; i <= 5; i++)
+{
+     Console.WriteLine("Numer: " + i);
+}                
+            </code></pre>
+        </div>
+
+        <section class="examples" id="examples">
+            <h2>Przykłady Kodów</h2>
+            <div class="content">
+                <h3>Program "Hello, World!"</h3>
+                <pre><code>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Witaj, C#!");
+    }
+}
+                </code></pre>
+            </div>
+        </section>
+
+        <section class="examples">
+            <div class="content">
+                <h3>Program Obliczanie pola prostokąta</h3>
+                <pre><code>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Wczytanie danych od użytkownika
+        Console.WriteLine("Podaj długość prostokąta:");
+        double dlugosc = double.Parse(Console.ReadLine());
+                    
+        Console.WriteLine("Podaj szerokość prostokąta:");
+        double szerokosc = double.Parse(Console.ReadLine());
+                    
+        // Obliczanie pola prostokąta
+        double pole = dlugosc * szerokosc;
+                    
+        // Wyświetlenie wyniku
+        Console.WriteLine($"Pole prostokąta o bokach {dlugosc} i {szerokosc} wynosi: {pole}");
+    }
+}
+                </code></pre>
+            </div>
+        </section>    
+
+        <section class="examples">
+            <div class="content">
+                <h3>Przyklad zmiennych</h3>
+                <pre><code>
+using System;
+
+
+class Program
+{
+    static void Main
+    {
+        int liczba; //Tworzenie zmiennej
+        int liczba = 10; //Nadawanie wartosci zmiennej
+        Console.WriteLine(liczba); //Wykorzystywanie zmiennej
+    }
+}
+                </code></pre>
+            </div>
+        </section>
+
+    <div class="examples" id="zaaw">
+        <h2>Zaawansowany C#</h2>
+    </div>
+
+    <section class="examples">
+        <div class="content">
+            <h3>Refleksja</h3>
+            <pre><code>
+using System;
+using System.Reflection;
+
+class Program
+{
+    static void Main()
+    {
+        Type type = typeof(string);
+        MethodInfo[] methods = type.GetMethods();
+
+        foreach (var method in methods)
+        {
+            Console.WriteLine(method.Name);
+        }
+    }
+}
+            </code></pre>
+        </div>
+    </section>
+
+    <section class="examples">
+        <div class="content">
+            <h3>Atrybuty</h3>
+            <pre><code>
+using System;
+
+[AttributeUsage(AttributeTargets.Class)]
+class MyAttribute : Attribute
+{
+    public string Info { get; }
+    public MyAttribute(string info) => Info = info;
+}
+
+[MyAttribute("Example Class")]
+class ExampleClass {}
+
+class Program
+{
+    static void Main()
+    {
+        Type type = typeof(ExampleClass);
+        var attributes = type.GetCustomAttributes(typeof(MyAttribute), false);
+        
+        foreach (MyAttribute attr in attributes)
+        {
+            Console.WriteLine(attr.Info);
+        }
+    }
+}
+            </code></pre>
+        </div>
+    </section>
+
+    <section class="examples">
+        <div class="content">
+            <h3>Dynamiczne typy</h3>
+            <pre><code>
+using System;
+using System.Dynamic;
+
+class Program
+{
+    static void Main()
+    {
+        dynamic expando = new ExpandoObject();
+        expando.Name = "John";
+        expando.Age = 30;
+
+        Console.WriteLine($"{expando.Name}, Age: {expando.Age}");
+    }
+}
+            </code></pre>
+        </div>
+    </section>
+
+    <section class="examples">
+        <div class="content">
+            <h3>Unsafe Code i wskaźniki</h3>
+            <pre><code>
+using System;
+
+class Program
+{
+    unsafe static void Main()
+    {
+        int number = 10;
+        int* pointer = &number;
+        Console.WriteLine($"Value: {number}, Address: {(long)pointer}");
+    }
+}
+            </code></pre>
+        </div>
+    </section>
+
+    <section class="examples">
+        <div class="content">
+            <h3>Task Parallel Library (TPL) i równoległość</h3>
+            <pre><code>
+using System;
+using System.Threading.Tasks;
+
+class Program
+{
+    static async Task Main()
+    {
+        Task task1 = Task.Run(() => Console.WriteLine("Task 1"));
+        Task task2 = Task.Run(() => Console.WriteLine("Task 2"));
+
+        await Task.WhenAll(task1, task2);
+    }
+}
+            </code></pre>
+        </div>
+    </section>
+
+    <section class="examples">
+        <div class="content">
+            <h3>Blokada wielowątkowa</h3>
+            <pre><code>
+using System;
+using System.Threading;
+
+class Program
+{
+    static object lockObj = new object();
+
+    static void Main()
+    {
+        Thread t1 = new Thread(Print);
+        Thread t2 = new Thread(Print);
+        
+        t1.Start();
+        t2.Start();
+
+        t1.Join();
+        t2.Join();
+    }
+
+    static void Print()
+    {
+        lock (lockObj)
+        {
+            Console.WriteLine("Thread: " + Thread.CurrentThread.ManagedThreadId);
+            Thread.Sleep(1000);
+        }
+    }
+}
+            </code></pre>
+        </div>
+    </section>
+
+    <section class="examples">
+        <div class="content">
+            <h3>Praca z plikami i strumieniami</h3>
+            <pre><code>
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        using (FileStream fs = new FileStream("example.txt", FileMode.Create))
+        using (StreamWriter writer = new StreamWriter(fs))
+        {
+            writer.WriteLine("Hello, File!");
+        }
+    }
+}                
+            </code></pre>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DotNetZone Milosz Biniek. Wszystkie prawa zastrzeżone.</p>
+        <p>Kontakt: kontakt.dotnetzone@gmail.com </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

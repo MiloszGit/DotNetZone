@@ -1,0 +1,200 @@
+/* Resetowanie marginesów i paddingu */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Styl nagłówka */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #5d3b9f;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header .logo h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #d1a0e3;
+}
+
+/* Sekcja hero */
+.hero {
+    background: linear-gradient(135deg, #6a2a9f, #2e1b6f);
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 10px;
+    margin: 20px 0px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta {
+    display: inline-block;
+    background-color: #d1a0e3;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+    background-color: #b68ac5;
+}
+
+/* Sekcja podstaw C# */
+.fundamentals {
+    padding: 40px 20px;
+}
+
+.fundamentals h2 {
+    font-size: 2.5rem;
+    color: #d1a0e3;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.content {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.content h3 {
+    font-size: 1.8rem;
+    color: #c7a0e1;
+    margin-bottom: 15px;
+}
+
+pre {
+    background-color: #1a1a1a;
+    color: #a7a7a7;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 1rem;
+}
+
+/* Sekcja przykładów */
+.examples {
+    padding: 40px 20px;
+    background-color: #292929;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.examples h2 {
+    font-size: 2.5rem;
+    color: #d1a0e3;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Stopka */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #5d3b9f;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Animacje */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.hero, .fundamentals, .examples {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.k {
+    text-align: center;
+}
+
+.menu {
+    display: none;
+  }
+  
+  .menu.active {
+    display: block;
+  }
+
+.nowbar {
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px; /* odstępy między elementami */
+}
+
+/* Ustawienie pionowe na ekranach do 768px (telefony) */
+@media (max-width: 375px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar a {
+        width: 100%; /* Przycisk na całą szerokość */
+        text-align: center; /* Wyśrodkowanie tekstu */
+        padding: 10px;
+    }
+}
