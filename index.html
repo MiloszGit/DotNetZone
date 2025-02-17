@@ -7,23 +7,28 @@
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215998614826017"
+     crossorigin="anonymous"></script>
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215998614826017"
+     crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1>DotNetZone</h1>
+            <h1 id="your-element">DotNetZone</h1>
         </div>
+        <div>
         <div class="nowbar">
         <nav class="navbar">
             <ul>
                 <li><a href="#fundamentals">Podstawy</a></li>
                 <li><a href="#examples">Przykłady</a></li>
-                <li><a href="https://c-sharp.ue.katowice.pl/ksiazka/c_sharp_wer2_0.pdf">Zasoby</a></li>
+                <li><a id="your-element" href="https://c-sharp.ue.katowice.pl/ksiazka/c_sharp_wer2_0.pdf">Zasoby</a></li>
                 <li><a href="#zaaw">Zaawansowany C#</a></li>
             </ul>
         </div>
         </nav>
+    </div>
     </header>
 
     <main>
@@ -325,6 +330,112 @@ class Program
     </section>
 
     </main>
+
+    <div class="examples" id="zaaw">
+        <h2>Kursy</h2>
+    </div>
+   
+    <div class="custom-select">
+        <select id="courseSelect" onchange="showCourseDetails()">
+            <option value="">Wybierz kurs</option>
+            <option value="kurs1">Kurs 1: Wprowadzenie do C#</option>
+            <option value="kurs2">Kurs 2: Funkcje w C#</option>
+            <option value="kurs3">Kurs 3: Zaawansowany C#</option>
+            <option value="kurs4">Kurs 4: Podstawy HTML</option>
+            <option value="kurs5">Kurs 5: Stylowanie CSS</option>
+        </select>
+    </div>
+    
+    <main>
+        <!-- Kurs 1: Wprowadzenie do C# -->
+        <section id="kurs1" class="course-section">
+            <h2>Kurs 1: Wprowadzenie do C#</h2>
+            <p id="course1Desc">Poznaj podstawy C#, w tym zmienne, typy danych i składnię. Kurs ten da ci podstawy, które pozwolą na rozpoczęcie programowania w C#.</p>
+            <a href="kurs1_material.pdf" download>Pobierz materiały w PDF</a>
+            <button id="startKurs1" onclick="startCourse('kurs1')">Rozpocznij kurs</button>
+            <div id="kurs1Zadanie" class="task-section" style="display:none;">
+                <h3>Zadanie 1: Zdefiniuj zmienną</h3>
+                <p>Napisz program w C#, który tworzy zmienną o nazwie "greeting" i przypisuje do niej wartość "Hello, World!".</p>
+                <textarea id="task1Input" placeholder="Napisz swój kod C# tutaj"></textarea>
+                <button onclick="checkTask1()">Sprawdź zadanie</button>
+                <div id="task1Result"></div>
+            </div>
+        </section>
+    
+        <!-- Kurs 2: Funkcje w C# -->
+        <section id="kurs2" class="course-section">
+            <h2>Kurs 2: Funkcje w C#</h2>
+            <p id="course2Desc">Kurs ten koncentruje się na funkcjach w C#. Nauczysz się, jak deklarować funkcje, przekazywać parametry i zwracać wartości.</p>
+            <a href="kurs2_material.pdf" download>Pobierz materiały w PDF</a>
+            <button id="startKurs2" onclick="startCourse('kurs2')">Rozpocznij kurs</button>
+            <div id="kurs2Zadanie" class="task-section" style="display:none;">
+                <h3>Zadanie 2: Funkcja dodawania</h3>
+                <p>Napisz funkcję, która przyjmuje dwa liczby całkowite jako argumenty i zwraca ich sumę.</p>
+                <textarea id="task2Input" placeholder="Napisz swój kod C# tutaj"></textarea>
+                <button onclick="checkTask2()">Sprawdź zadanie</button>
+                <div id="task2Result"></div>
+            </div>
+        </section>
+    
+        <!-- Kurs 3: Zaawansowany C# -->
+        <section id="kurs3" class="course-section">
+            <h2>Kurs 3: Zaawansowany C#</h2>
+            <p id="course3Desc">W tym kursie zagłębimy się w zaawansowane tematy C#, takie jak LINQ, async/await i inne.</p>
+            <a href="kurs3_material.pdf" download>Pobierz materiały w PDF</a>
+            <button id="startKurs3" onclick="startCourse('kurs3')">Rozpocznij kurs</button>
+            <div id="kurs3Zadanie" class="task-section" style="display:none;">
+                <h3>Zadanie 3: Stwórz wyrażenie lambda</h3>
+                <p>Napisz program w C#, który używa wyrażenia lambda do filtrowania listy liczb całkowitych, pozostawiając tylko liczby parzyste.</p>
+                <textarea id="task3Input" placeholder="Napisz swój kod C# tutaj"></textarea>
+                <button onclick="checkTask3()">Sprawdź zadanie</button>
+                <div id="task3Result"></div>
+            </div>
+        </section>
+    
+        <!-- Kurs 4: Podstawy HTML -->
+        <section id="kurs4" class="course-section">
+            <h2>Kurs 4: Podstawy HTML</h2>
+            <p id="course4Desc">Poznaj podstawową strukturę dokumentu HTML i jak tworzyć strony internetowe za pomocą tagów HTML. W tym kursie stworzysz swoją pierwszą stronę internetową.</p>
+            <a href="kurs4_material.pdf" download>Pobierz materiały w PDF</a>
+            <button id="startKurs4" onclick="startCourse('kurs4')">Rozpocznij kurs</button>
+            <div id="kurs4Zadanie" class="task-section" style="display:none;">
+                <h3>Zadanie 4: Stwórz prostą stronę internetową</h3>
+                <p>Napisz dokument HTML, który wyświetla nagłówek "Moja pierwsza strona internetowa" oraz akapit poniżej.</p>
+                <textarea id="task4Input" placeholder="Napisz swój kod HTML tutaj"></textarea>
+                <button onclick="checkTask4()">Sprawdź zadanie</button>
+                <div id="task4Result"></div>
+            </div>
+        </section>
+    
+        <!-- Kurs 5: Stylowanie CSS -->
+        <section id="kurs5" class="course-section">
+            <h2>Kurs 5: Stylowanie CSS</h2>
+            <p id="course5Desc">Kurs ten wprowadza do CSS (Cascading Style Sheets). Nauczysz się, jak stylizować elementy HTML, zmieniać kolory i układ strony.</p>
+            <a href="kurs5_material.pdf" download>Pobierz materiały w PDF</a>
+            <button id="startKurs5" onclick="startCourse('kurs5')">Rozpocznij kurs</button>
+            <div id="kurs5Zadanie" class="task-section" style="display:none;">
+                <h3>Zadanie 5: Stylizuj swoją stronę</h3>
+                <p>Za pomocą CSS zmień kolor tła swojej strony internetowej na jasnoniebieski oraz ustaw kolor tekstu nagłówka na zielony.</p>
+                <textarea id="task5Input" placeholder="Napisz swój kod CSS tutaj"></textarea>
+                <button onclick="checkTask5()">Sprawdź zadanie</button>
+                <div id="task5Result"></div>
+            </div>
+        </section>
+    </main>
+    
+    </main>
+    
+    
+<!-- Reklama 2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5215998614826017"
+     data-ad-slot="5614644559"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
     <footer>
         <p>&copy; 2025 DotNetZone Milosz Biniek. Wszystkie prawa zastrzeżone.</p>

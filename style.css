@@ -174,10 +174,6 @@ footer p {
     display: block;
   }
 
-.nowbar {
-
-}
-
 .navbar {
     display: flex;
     justify-content: center;
@@ -186,15 +182,157 @@ footer p {
     gap: 10px; /* odstępy między elementami */
 }
 
-/* Ustawienie pionowe na ekranach do 768px (telefony) */
-@media (max-width: 375px) {
-    .navbar {
-        flex-direction: column;
-    }
 
-    .navbar a {
-        width: 100%; /* Przycisk na całą szerokość */
-        text-align: center; /* Wyśrodkowanie tekstu */
-        padding: 10px;
+@media (max-width: 40%) {
+    .your-element {
+        display: none;
     }
 }
+
+/* Header styling */
+header {
+    background-color: #2a003d; /* Deep purple background */
+    color: #ffffff; /* White text for contrast */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Header Title */
+#headerTitle {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #dcdcdc;
+}
+
+/* Header Description */
+#headerDesc {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #bbbbbb;
+}
+
+/* Course section */
+.course-section {
+    background-color: #1a0031; /* Darker purple background for courses */
+    border: 1px solid #4e1b6e; /* Purple border */
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Course description */
+.course-section p {
+    color: #dcdcdc;
+}
+
+/* Language Selector */
+#languageSelect {
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #3a0047; /* Purple background for select */
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+}
+
+/* Buttons */
+button {
+    background-color: #6a1a7f; /* Lighter purple button */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #9c4b8c; /* Slightly lighter purple on hover */
+}
+
+/* Task result messages */
+#task1Result, #task2Result, #task3Result, #task4Result, #task5Result,
+#task6Result, #task7Result, #task8Result, #task9Result, #task10Result,
+#task11Result, #task12Result, #task13Result, #task14Result, #task15Result,
+#task16Result {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+#task1Result.success, #task2Result.success, #task3Result.success, 
+#task4Result.success, #task5Result.success, #task6Result.success,
+#task7Result.success, #task8Result.success, #task9Result.success,
+#task10Result.success, #task11Result.success, #task12Result.success,
+#task13Result.success, #task14Result.success, #task15Result.success,
+#task16Result.success {
+    color: #00c853; /* Green color for success */
+}
+
+#task1Result.error, #task2Result.error, #task3Result.error,
+#task4Result.error, #task5Result.error, #task6Result.error,
+#task7Result.error, #task8Result.error, #task9Result.error,
+#task10Result.error, #task11Result.error, #task12Result.error,
+#task13Result.error, #task14Result.error, #task15Result.error,
+#task16Result.error {
+    color: #d32f2f; /* Red color for errors */
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Task input styling */
+input[type="text"] {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #4e1b6e; /* Purple border */
+    background-color: #1a0031;
+    color: #fff;
+}
+
+input[type="text"]:focus {
+    border-color: #9c4b8c;
+    outline: none;
+}
+
+/* Wyśrodkowanie selektora */
+#courseSelect {
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #3a0047; /* Fioletowe tło */
+    color: #fff; /* Biały tekst */
+    border: 1px solid #6a1a7f; /* Fioletowa ramka */
+    font-size: 1.2em; /* Większy tekst */
+    margin-top: 20px;
+    width: 250px; /* Większa szerokość selektora */
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Wyśrodkowanie selektora */
+}
+
+/* Focus efekt */
+#courseSelect:focus {
+    outline: none;
+    border-color: #9c4b8c; /* Jaśniejsza fioletowa ramka przy focusie */
+}
+
+/* Opcje w selektorze */
+#courseSelect option {
+    background-color: #1a0031; /* Ciemne tło dla opcji */
+    color: #fff; /* Biały tekst w opcjach */
+}
+
+/* Efekt hover nad opcjami */
+#courseSelect option:hover {
+    background-color: #6a1a7f; /* Jaśniejszy fiolet przy hover */
+}
+
+.label {
+    display: none;
+}
+
