@@ -108,7 +108,7 @@ function checkTask4() {
 
 function checkTask5() {
     const userCode = document.getElementById('task5Input').value.trim();
-    const correctCode = 'class Car { public string Brand; public int Year; public void Display() { Console.WriteLine($"{Brand}, {Year}"); } }';
+    const correctCode = 'background-color: lightblue;';
     
     if (userCode === correctCode) {
         document.getElementById('task5Result').textContent = 'Zadania wykonane!';
